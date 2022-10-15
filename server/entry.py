@@ -6,6 +6,6 @@ async def getImage(prompt):
         data={
             'text': prompt,
         },
-        headers={'api-key': 'quickstart-QUdJIGlzIGNvbWluZy4uLi4K'}
+        headers={'api-key': 'db16a8b2-46cf-4abf-b1c0-9ae359dbf80a'}
     )
-    return r.json().output_url
+    return r.json()

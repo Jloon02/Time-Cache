@@ -6,9 +6,10 @@ from firebase.admin import db
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from entry import getImage
 
 app = FastAPI(
-    title="Blackjack Strategy API"
+    title="Montage My Life"
 )
 
 app.add_middleware(
@@ -30,7 +31,13 @@ class Entry(BaseModel):
 async def upload_entry(entry: Entry):
     print(jsonable_encoder(entry))
     entry.image = await getImage(entry.prompt)
+    print(entry.image)
+
     db.collection(entry.uid).document(entry.date).set(jsonable_encoder(entry))
+
+@app.post("/deleteEntry/{uid}/{date}")
+async def delete_entry(uid: str, date: str):
+    db.collection(uid).document(date).delete()
 
 @app.get("/getEntries/{uid}")
 async def fetch_entries(uid: str):
