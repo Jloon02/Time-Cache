@@ -44,12 +44,15 @@ const styles = StyleSheet.create({
 		flex: 1,
 	},
 	captionStyle: {
-
+		fontWeight: 'bold',
+		alignSelf: 'right',
+		marginRight: '10',
 	},
 	droplogContainer: {
-
+		flex: 1,
 	},
 	droplogStyle: {
-		
+		alignSelf: 'right',
+		marginRight: '10',
 	},
 })
