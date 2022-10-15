@@ -1,4 +1,5 @@
 import React from 'react';
+// import './Entry.css';
 
 import {
 	Text,
@@ -11,19 +12,19 @@ import {
 // props(prompt, caption, log, imageURL)
 function Entry(props) {
 	return React.createElement(
-		<div style={styles.allContainer}>
-			<div style={styles.imageContainer}>
+		<div style={allContainer}>
+			<div style={imageContainer}>
 			<Image
-				style={styles.imageStyle}
+				style={imageStyle}
 				source={props.imageURL}
 			/>
 			</div>
-			<Text style={styles.captionStyle}>{props.caption}</Text>
-			<div style={styles.droplogContainer}>
-				<Text style={styles.droplogStyle}>
+			<Text style={captionStyle}>{props.caption}</Text>
+			<div style={droplogContainer}>
+				<Text style={droplogStyle}>
 					{props.prompt}
 				</Text>
-				<Text style={styles.droplogStyle}>
+				<Text style={droplogStyle}>
 					{props.log}
 				</Text>
 			</div>
@@ -31,34 +32,32 @@ function Entry(props) {
 	);
 }
 
-const styles = StyleSheet.create({
-	allContainer: {
-		backgroundColor: 'black',
-		flex: 0.5,
-		justifyContent: 'flex-start',
-		flexDirection: 'row',
-		width: '50%',
-	},
-	imageContainer: {
-		flex: 0.9,
-		justifyContent: 'flex-start',
-		alignSelf: 'center',
-	},
-	imageStyle: {
-		flex: 1,
-	},
-	captionStyle: {
-		fontWeight: 'bold',
-		alignSelf: 'right',
-		marginRight: '10',
-	},
-	droplogContainer: {
-		flex: 1,
-	},
-	droplogStyle: {
-		alignSelf: 'right',
-		marginRight: '10',
-	},
-})
+const allContainer = {
+	backgroundColor: 'black',
+	flex: 0.5,
+	justifyContent: 'flex-start',
+	flexDirection: 'row',
+	width: '50%',
+}
+const imageContainer = {
+	flex: 0.9,
+	justifyContent: 'flex-start',
+	alignSelf: 'center',
+}
+const imageStyle = {
+	flex: 1,
+}
+const captionStyle = {
+	fontWeight: 'bold',
+	alignSelf: 'right',
+	marginRight: '10',
+}
+const droplogContainer = {
+	flex: 1,
+}
+const droplogStyle = {
+	alignSelf: 'right',
+	marginRight: '10',
+}
 
 export default Entry;
