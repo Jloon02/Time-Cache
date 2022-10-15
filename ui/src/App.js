@@ -8,15 +8,16 @@ function App() {
   let data = {
     prompt: "prompt",
     caption: "caption",
-    log: "log", 
-    imageURL: "https://api.deepai.org/job-view-file/ffb47e35-7583-47f6-ac92-599f70924f93/outputs/output.jpg"
+    date: "date", 
+    imageURL: "https://api.deepai.org/job-view-file/69018c99-9241-4c1e-b963-585f755d7712/outputs/output.jpg"
   }
   
   return (
     <div>
     <Form></Form>
     
-    <Entry prompt={data.prompt} caption={data.caption} log={data.log} imageURL={data.imageURL}></Entry>
+    <Entry prompt={data.prompt} caption={data.caption} log={data.date} imageURL={data.imageURL}></Entry>
+    <Entry prompt={data.prompt} caption={data.caption} log={data.date} imageURL={data.imageURL}></Entry>
     </div>
 
   );
