@@ -1,5 +1,4 @@
 import React from 'react';
-// import './Entry.css';
 
 import {
 	Text,
@@ -11,29 +10,29 @@ import {
 
 // props(prompt, caption, log, imageURL)
 function Entry(props) {
-	return React.createElement(
-		<div style={allContainer}>
-			<div style={imageContainer}>
-			<Image
-				style={imageStyle}
-				source={props.imageURL}
-			/>
-			</div>
-			<Text style={captionStyle}>{props.caption}</Text>
-			<div style={droplogContainer}>
-				<Text style={droplogStyle}>
-					{props.prompt}
-				</Text>
-				<Text style={droplogStyle}>
-					{props.log}
-				</Text>
-			</div>
-		</div>
+	return (
+	    <div style={allContainer}>
+            <div style={imageContainer}>
+            <img
+                style={imageStyle}
+                src={props.imageURL}
+            />
+            </div>
+            <p style={captionStyle}>{props.caption}</p>
+            <div style={droplogContainer}>
+                <p style={droplogStyle}>
+                    {props.prompt}
+                </p>
+                <p style={droplogStyle}>
+                    {props.log}
+                </p>
+            </div>
+        </div>	
 	);
 }
 
 const allContainer = {
-	backgroundColor: 'black',
+	// backgroundColor: 'black',
 	flex: 0.5,
 	justifyContent: 'flex-start',
 	flexDirection: 'row',
