@@ -6,9 +6,10 @@ from firebase.admin import db
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from entry import getImage
 
 app = FastAPI(
-    title="Blackjack Strategy API"
+    title="Montage My Life"
 )
 
 app.add_middleware(
@@ -18,22 +19,30 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-class Game(BaseModel):
-    ip_address: str
-    outcome: str
-    time: str
-    dealer_hand: str
-    player_hand: list[str]
+class Entry(BaseModel):
+    uid: str
+    date: str
+    caption: str
+    prompt: str
+    entry: str
+    image: str
 
-@app.post("/game/")
-async def upload_game(game: Game):
-    print(jsonable_encoder(game))
-    db.collection(game.ip_address).document(game.time).set(jsonable_encoder(game))
+@app.post("/addEntry/")
+async def upload_entry(entry: Entry):
+    print(jsonable_encoder(entry))
+    entry.image = await getImage(entry.prompt)
+    print(entry.image)
 
-@app.get("/get_games/{ip_address}")
-async def fetch_games(ip_address: str):
-    docs = db.collection(ip_address).stream()
-    games = []
+    db.collection(entry.uid).document(entry.date).set(jsonable_encoder(entry))
+
+@app.post("/deleteEntry/{uid}/{date}")
+async def delete_entry(uid: str, date: str):
+    db.collection(uid).document(date).delete()
+
+@app.get("/getEntries/{uid}")
+async def fetch_entries(uid: str):
+    docs = db.collection(uid).stream()
+    entries = []
     for doc in docs:
-        games.append(doc.to_dict())
-    return games
+        entries.append(doc.to_dict())
+    return entries
