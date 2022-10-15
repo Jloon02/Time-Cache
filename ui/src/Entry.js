@@ -3,31 +3,31 @@ import React from 'react';
 import {
 	Text,
 	Image,
-	View,
+	div,
 	StyleSheet,
 } from 'react'
 
 
 // props(prompt, caption, log, imageURL)
 function Entry(props) {
-	return (
-		<View style={styles.allContainer}>
-			<View style={styles.imageContainer}>
+	return React.createElement(
+		<div style={styles.allContainer}>
+			<div style={styles.imageContainer}>
 			<Image
 				style={styles.imageStyle}
 				source={props.imageURL}
 			/>
-			</View>
+			</div>
 			<Text style={styles.captionStyle}>{props.caption}</Text>
-			<View style={styles.droplogContainer}>
+			<div style={styles.droplogContainer}>
 				<Text style={styles.droplogStyle}>
 					{props.prompt}
 				</Text>
 				<Text style={styles.droplogStyle}>
 					{props.log}
 				</Text>
-			</View>
-		</View>
+			</div>
+		</div>
 	);
 }
 
