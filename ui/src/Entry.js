@@ -5,36 +5,35 @@ import {
 	Image,
 	View,
 	StyleSheet,
-	SafeAreaView,
 } from 'react'
 
 
 // props(prompt, caption, log, imageURL)
 function Entry(props) {
 	return (
-		<SafeAreaView style={styles.allContainer}>
-			<SafeAreaView style={styles.imageContainer}>
+		<View style={styles.allContainer}>
+			<View style={styles.imageContainer}>
 			<Image
 				style={styles.imageStyle}
-				source={props.imageURL}>
-			</Image>
-			</SafeAreaView>
+				source={props.imageURL}
+			/>
+			</View>
 			<Text style={styles.captionStyle}>{props.caption}</Text>
-			<SafeAreaView style={styles.droplogContainer}>
+			<View style={styles.droplogContainer}>
 				<Text style={styles.droplogStyle}>
 					{props.prompt}
 				</Text>
 				<Text style={styles.droplogStyle}>
 					{props.log}
 				</Text>
-			</SafeAreaView>
-		</SafeAreaView>
+			</View>
+		</View>
 	);
 }
 
 const styles = StyleSheet.create({
 	allContainer: {
-		backgroundColor: 'white',
+		backgroundColor: 'black',
 		flex: 0.5,
 		justifyContent: 'flex-start',
 		flexDirection: 'row',
