@@ -2,7 +2,6 @@ import Entry from './components/Entry';
 import Form from './components/Form';
 import './App.css';
 import * as React from 'react';
-import {View} from 'react';
 
 function App() {
   

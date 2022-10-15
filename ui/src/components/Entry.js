@@ -1,11 +1,5 @@
 import React from 'react';
-
-import {
-	Text,
-	Image,
-	div,
-	StyleSheet,
-} from 'react'
+import './Entry.css';
 
 
 // props(prompt, caption, log, imageURL)
@@ -33,18 +27,31 @@ function Entry(props) {
 
 const allContainer = {
 	// backgroundColor: 'black',
+	marginRight: '25%',
+	marginLeft: '26.5%',
 	flex: 0.5,
-	justifyContent: 'flex-start',
+	justifyContent: 'center',
 	flexDirection: 'row',
-	width: '50%',
+	width: '40%',
+	alignSelf: 'center'
 }
 const imageContainer = {
-	flex: 0.9,
-	justifyContent: 'flex-start',
+	flex: 0.5,
+	// justifyContent: 'flex-start',
 	alignSelf: 'center',
+	width: 50,
+	height: 50,
 }
 const imageStyle = {
 	flex: 1,
+	width: 600,
+	height: 600,
+	textAlign: 'center',
+    display: 'block',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 'auto',
+    // width: "100%",
 }
 const captionStyle = {
 	fontWeight: 'bold',
