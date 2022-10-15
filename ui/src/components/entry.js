@@ -15,8 +15,8 @@ function Entry(props) {
 		<SafeAreaView style={styles.allContainer}>
 			<SafeAreaView style={styles.imageContainer}>
 			<Image
-				style={styles.imageStyle}>
-				source={props.imageURL}
+				style={styles.imageStyle}
+				source={props.imageURL}>
 			</Image>
 			</SafeAreaView>
 			<Text style={styles.captionStyle}>{props.caption}</Text>
