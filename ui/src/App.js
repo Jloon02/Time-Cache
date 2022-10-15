@@ -3,27 +3,24 @@ import './App.css';
 
 function App() {
   return (
+      <form method="POST">
+        <input type="text" id="input-caption" placeholder="Caption"></input>
+        <br></br>
+        <input type="text" id="input-prompt" placeholder="Prompt"></input>
+        <br></br>
+        <textarea type="text" id="input-diary-entry" placeholder="Caption" rows="6"></textarea>
+        <br></br>
+        <button type="submit" id="submit">Submit</button>
+      </form>
 
-    <form method="POST">
-      <label>Caption</label>
-      <input type="text" id="caption"></input>
-      <br></br>
-      <label>Prompt</label>
-      <input type="text" id="prompt"></input>
-      <br></br>
-      <label>Diary Entry</label>
-      <textarea type="text" id="entry"></textarea>
-      <br></br>
-      <button type="submit">Submit</button>
-    </form>
 
   );
 }
 
-const styles = StyleSheet.create({
-
-
-
-})
+// const styles = StyleSheet.create({
+//   label: {
+//     color: red
+//   }
+// });
 
 export default App;
