@@ -3,6 +3,7 @@ import React from 'react';
 import {
 	Text,
 	Image,
+	View,
 	StyleSheet,
 	SafeAreaView,
 } from 'react'
@@ -28,12 +29,16 @@ function Entry(props) {
 				</Text>
 			</SafeAreaView>
 		</SafeAreaView>
-	)
+	);
 }
 
 const styles = StyleSheet.create({
 	allContainer: {
-		display: flex,
+		backgroundColor: 'white',
+		flex: 0.5,
+		justifyContent: 'flex-start',
+		flexDirection: 'row',
+		width: '50%',
 	},
 	imageContainer: {
 		flex: 0.9,
