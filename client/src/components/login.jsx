@@ -3,6 +3,7 @@ import React from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
+import './loginPage.css';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -36,11 +37,38 @@ const uiConfig = {
 
 function Login() {
   return (
-    <div>
-      <h1>My App</h1>
-      <p>Please sign-in:</p>
+    
+    <body>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"></link>
+      <link rel="stylesheet" href="./loginPage.css"></link>
+      <script src="./loginPage.js" defer></script>
+
+      <div id="welcome_container">
+        <h1 class="welcome_message">Please Log-In: </h1>
+      </div>
+
+      <div class="center">
+        <div id="login_container">
+          <form>
+            <label for="username"></label>
+            <input type="text" id="username" placeholder="Username" name="username" required></input>
+            <label for="password"></label>
+            <input type="password" id="password" placeholder="Password" name="password" required></input>
+            <div id="incorrect_credentials" class="center">
+              <b>Your username or password is not correct!</b>
+            </div>
+
+            <div class="buttons">
+              <button type="button" id="login" onclick="handleLogin()">Log-In</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
       <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
-    </div>
+    </body>
+
   );
 }
 
