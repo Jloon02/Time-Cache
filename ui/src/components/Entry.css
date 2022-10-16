@@ -1,0 +1,25 @@
+.center{
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+  }
+
+  .round {
+	border-radius: auto;
+  }
+
+  .box {
+	  background-color: lightsteelblue;
+	  width: 700px;
+	  height: 800px;
+	  box-sizing: border-box;
+	  align-self: auto;
+	  align-content: auto;
+	  margin: 0 auto;
+	  margin-bottom: 30px;
+	  border-radius: 5%;
+	  
+  }
