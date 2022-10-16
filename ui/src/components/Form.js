@@ -12,15 +12,19 @@ function Form() {
 
     const onSubmit = evt => {
         evt.preventDefault();
+        // console.log(caption);
+        // console.log(prompt);
+        // console.log(date);
+        let JSON = {
+            "caption": caption,
+            "prompt": prompt,
+            "date": date
+        }
+        
 
-        console.log(caption);
-        console.log(prompt);
-        console.log(date);
-
-        // setCaption(" ");
-        // setPrompt(" ");
-        // setDate(" ");
         document.getElementById("form").reset();
+
+        
     };
 
     return (
