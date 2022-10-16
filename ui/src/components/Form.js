@@ -1,5 +1,5 @@
 // import { response } from 'express';
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './Form.css';
 import * as React from 'react';
 
@@ -8,22 +8,23 @@ function Form() {
 
     const [caption, setCaption] = useState("");
     const [prompt, setPrompt] = useState("");
-    const [log, setLog] = useState("");
+    const [date, setDate] = useState("");
 
     const onSubmit = evt => {
         evt.preventDefault();
 
         console.log(caption);
         console.log(prompt);
-        console.log(log);
+        console.log(date);
 
-        setCaption("");
-        setPrompt("");
-        setLog("");
+        // setCaption(" ");
+        // setPrompt(" ");
+        // setDate(" ");
+        document.getElementById("form").reset();
     };
 
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} id="form">
             <input 
                 type="text" 
                 id="caption" 
@@ -38,12 +39,10 @@ function Form() {
                 onChange={(e)=>setPrompt(e.target.value)}></input>
                 
             <br></br>
-            <textarea 
-                type="text" 
-                id="log" 
-                placeholder="Diary Entry" 
-                rows="6"
-                onChange={(e)=>setLog(e.target.value)}></textarea>
+            <input
+                type="date" 
+                id="date" 
+                onChange={(e)=>setDate(e.target.value)}></input>
             <br></br>
             <button type="submit" id="submit">Submit</button>
         </form>

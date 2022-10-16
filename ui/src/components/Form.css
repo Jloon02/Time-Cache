@@ -31,3 +31,7 @@ form {
     background-color: #9695d9;
     border-radius: 1em;
   }
+
+  #submit:hover {
+    cursor: pointer;
+  }
